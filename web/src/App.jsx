@@ -10,7 +10,14 @@ import './App.css'
 export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  const { visited, markVisited } = useProgress()
+  const { visited, markVisited, resetProgress } = useProgress()
+
+  const handleReset = useCallback(() => {
+    if (window.confirm('Reset all progress and return to the beginning?')) {
+      resetProgress()
+      setCurrentIndex(0)
+    }
+  }, [resetProgress])
 
   const page = ALL_PAGES[currentIndex]
 
@@ -51,6 +58,7 @@ export default function App() {
           visited={visited}
           sidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen(o => !o)}
+          onReset={handleReset}
         />
         <Reader page={page} />
         <BottomNav

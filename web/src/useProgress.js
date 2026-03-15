@@ -30,5 +30,10 @@ export function useProgress() {
     })
   }, [])
 
-  return { visited, markVisited }
+  const resetProgress = useCallback(() => {
+    setVisited(new Set())
+    try { localStorage.removeItem(STORAGE_KEY) } catch {}
+  }, [])
+
+  return { visited, markVisited, resetProgress }
 }

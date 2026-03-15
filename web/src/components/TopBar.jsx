@@ -9,7 +9,7 @@ const TIER_META = {
 }
 
 export default function TopBar({
-  page, currentIndex, totalPages, visited, sidebarOpen, onToggleSidebar,
+  page, currentIndex, totalPages, visited, sidebarOpen, onToggleSidebar, onReset,
 }) {
   const { label, color } = TIER_META[page.tier] ?? TIER_META.plan
   const pct = Math.round((visited.size / totalPages) * 100)
@@ -37,6 +37,14 @@ export default function TopBar({
           <div className="progress-fill" style={{ width: `${pct}%` }} />
         </div>
         <span className="progress-pct">{pct}%</span>
+        <button
+          className="topbar-reset"
+          onClick={onReset}
+          aria-label="Reset progress"
+          title="Reset progress and return to beginning"
+        >
+          ↺
+        </button>
       </div>
     </header>
   )
