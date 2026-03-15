@@ -1,0 +1,201 @@
+.reader-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.reader-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 36px 80px;
+}
+
+/* ── Headings ── */
+.reader-content h1 {
+  font-size: 1.85em;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.35em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--border);
+}
+
+.reader-content h2 {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 2.2em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--border);
+}
+
+.reader-content h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1.6em;
+  margin-bottom: 0.4em;
+}
+
+.reader-content h4 {
+  font-size: 0.82em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 1.4em;
+  margin-bottom: 0.3em;
+}
+
+/* ── Body text ── */
+.reader-content p {
+  margin-bottom: 1em;
+}
+
+.reader-content ul,
+.reader-content ol {
+  padding-left: 1.6em;
+  margin-bottom: 1em;
+}
+
+.reader-content li {
+  margin-bottom: 0.3em;
+}
+
+.reader-content li > p {
+  margin-bottom: 0.3em;
+}
+
+.reader-content strong { font-weight: 600; }
+
+.reader-content a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+.reader-content a:hover { text-decoration: underline; }
+
+.reader-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+/* ── Blockquotes (used for goal/chapter callouts) ── */
+.reader-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.6em 1.1em;
+  margin: 1.2em 0;
+  background: var(--accent-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.reader-content blockquote p {
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.reader-content blockquote p + p {
+  margin-top: 0.4em;
+}
+
+/* ── Inline code ── */
+.inline-code {
+  background: var(--surface-2);
+  color: #f0883e;
+  padding: 0.15em 0.38em;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  border: 1px solid var(--border);
+}
+
+/* ── Code blocks ── */
+.code-block-wrap {
+  position: relative;
+  margin: 1.3em 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.code-lang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(33, 38, 45, 0.9);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  padding: 3px 10px;
+  border-bottom-left-radius: var(--radius);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-transform: lowercase;
+  pointer-events: none;
+}
+
+.reader-content pre {
+  margin: 1.3em 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* When wrapped by code-block-wrap, pre gets no extra margin/border */
+.code-block-wrap + pre,
+.code-block-wrap pre {
+  margin: 0;
+  border: none;
+}
+
+.reader-content pre code {
+  display: block;
+  padding: 16px 18px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.58;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Plain pre/code without hljs (e.g. ascii diagrams) */
+.reader-content pre code:not(.hljs) {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* ── Tables ── */
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.3em 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.reader-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.reader-content th {
+  background: var(--surface-2);
+  font-weight: 600;
+  padding: 9px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.reader-content td {
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.reader-content tr:last-child td {
+  border-bottom: none;
+}
+
+.reader-content tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.018);
+}
